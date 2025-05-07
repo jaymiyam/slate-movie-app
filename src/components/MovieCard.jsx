@@ -47,7 +47,7 @@ export default function MovieCard({ movie, isBig = false }) {
         </button>
       </div>
       <div className="py-2 text-white">
-        <h2 className="font-display font-medium text-lg leading-5 mb-1.5">
+        <h2 className="font-display font-medium text-lg leading-5 mb-1.5 text-balance">
           {movie.title}
         </h2>
         <p className="font-display text-md">{movie.release_date}</p>

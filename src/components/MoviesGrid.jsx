@@ -41,37 +41,37 @@ export default function MoviesGrid({ children, title }) {
           {children}
         </div>
         {isLeftVisible && (
-          <div className="absolute left-0 top-0 bottom-0 bg-linear-to-r from-neutral-900/50 to-transparent w-28 flex flex-col justify-center px-4 opacity-0 hover:opacity-100">
-            <button
-              onClick={() => {
-                setTranslate((translate) => {
-                  const newTranslate = translate - TRANSLATE_AMOUNT;
-                  if (newTranslate <= 0) return 0;
-                  return newTranslate;
-                });
-              }}
-              className="text-emerald-300 text-xl cursor-pointer"
-            >
+          <div
+            onClick={() => {
+              setTranslate((translate) => {
+                const newTranslate = translate - TRANSLATE_AMOUNT;
+                if (newTranslate <= 0) return 0;
+                return newTranslate;
+              });
+            }}
+            className="cursor-pointer absolute left-0 top-0 bottom-0 bg-linear-to-r from-neutral-900/50 to-transparent w-16 md:w-28 flex flex-col justify-center px-4 lg:opacity-0 lg:hover:opacity-100"
+          >
+            <button className="text-emerald-300 text-xl cursor-pointer">
               <Icon icon="mdi:chevron-left-circle" width="36" height="36" />
             </button>
           </div>
         )}
         {isRightVisible && (
-          <div className="absolute right-0 top-0 bottom-0 bg-linear-to-l from-neutral-900/50 to-transparent w-28 flex flex-col justify-center px-4 opacity-0 hover:opacity-100">
-            <button
-              onClick={() => {
-                setTranslate((translate) => {
-                  const newTranslate = translate + TRANSLATE_AMOUNT;
-                  const edge = containerRef.current.scrollWidth;
-                  const width = containerRef.current.clientWidth;
-                  if (newTranslate + width >= edge) {
-                    return edge - width;
-                  }
-                  return newTranslate;
-                });
-              }}
-              className="text-emerald-300 text-xl self-end cursor-pointer"
-            >
+          <div
+            onClick={() => {
+              setTranslate((translate) => {
+                const newTranslate = translate + TRANSLATE_AMOUNT;
+                const edge = containerRef.current.scrollWidth;
+                const width = containerRef.current.clientWidth;
+                if (newTranslate + width >= edge) {
+                  return edge - width;
+                }
+                return newTranslate;
+              });
+            }}
+            className="cursor-pointer absolute right-0 top-0 bottom-0 bg-linear-to-l from-neutral-900/50 to-transparent w-16 md:w-28 flex flex-col justify-center px-4 lg:opacity-0 lg:hover:opacity-100"
+          >
+            <button className="text-emerald-300 text-xl self-end cursor-pointer">
               <Icon icon="mdi:chevron-right-circle" width="36" height="36" />
             </button>
           </div>

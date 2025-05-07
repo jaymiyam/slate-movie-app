@@ -63,7 +63,7 @@ export default function MovieDetails() {
             </div>
             <div className="flex flex-col gap-6">
               <div>
-                <h1 className="font-display font-medium text-4xl mb-2">
+                <h1 className="font-display font-medium text-4xl mb-2 text-balance">
                   {movie.title}
                 </h1>
                 <p className="text-emerald-300 italic">
