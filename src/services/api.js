@@ -1,5 +1,4 @@
 const BASE_URL = 'https://api.themoviedb.org/3';
-// const API_KEY = '5e38fbae568e75ca30799724e39fc85a';
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 export async function fetchPopularMovies() {

@@ -1,0 +1,43 @@
+20/11/2025 update plan:
+
+1. api.js: remove API_KEY (done)
+2. /:id: page scroll back to top
+
+transform to typescript
+1. install TS: npm install --save-dev typescript @types/react @types/react-dom
+2. Initiate TS config file: npx tsc --init
+3. setup TS confign options: {
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "strict": true,
+    "allowJs": true,
+    "checkJs": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}
+4. Do it file by file, in this order:
+Components (.jsx → .tsx)
+Utility files
+Context or Hooks
+Main entry points (main.js → main.tsx)
+
+5. Add types one by one: props -> useState -> fetch results
+6. create shared types file: src/types/movie.ts
+7. Change vite config extension: vite.config.js → vite.config.ts
+
+8. Update vite config code: 
+
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+});
+
+9. test and deploy

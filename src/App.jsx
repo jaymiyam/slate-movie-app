@@ -6,11 +6,13 @@ import Home from './pages/Home';
 import Favourites from './pages/Favourites';
 import AppFooter from './components/AppFooter';
 import MovieDetails from './pages/MovieDetails';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   return (
     <>
       <FavouritesContextProvider>
+        <ScrollToTop />
         <AppHeader />
         <main>
           <Routes>
